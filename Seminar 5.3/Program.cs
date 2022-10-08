@@ -1,27 +1,20 @@
 ﻿// Задайте массив. Напишите программу, которая определяет присутствует ли заданное число в массиве.
 
 Console.WriteLine("Введите число: ");
-int[] array = MyArray(9, 1, 99);
-int x = int.Parse(Console.ReadLine());
+int x = int.Parse(Console.ReadLine()); //введенное число
+
+int[] array = MyArray(10, -99, 99); //Назначили массив
 Console.WriteLine(String.Join(" ", array));
-int result1 = 0;
-int result2 = 0;
 
 for(int a = 0; a<array.Length; a++)
 {
-if(array[a]!=x)
+if(array[a]==x)
 {
-    result1=array[a];
-    Console.WriteLine($"Заданного числа в массиве НЕТ!");
-}
-else
-{
-    result2 = array[a];
-    Console.WriteLine($"Заданное число {result2} присутствует в массиве.");
+    Console.WriteLine($"Заданное число {array[a]} присутствует в массиве.");
 }
 }
 
-int[] MyArray (int size, int minValue, int maxValue)
+int[] MyArray (int size, int minValue, int maxValue) //Заполняем массив рандомными числами
 {
     int[] res = new int[size];
     for(int i = 0; i<size; i++)
