@@ -4,29 +4,25 @@
 
 int[] array = MyArray(9, 10, 90); //Задали массив
 Console.WriteLine(String.Join(" ", array)); //Считали массив
-int[] array2 = newArray1(array);
-Console.WriteLine(String.Join(" ", array2));
-Console.WriteLine(newArray1(" ", array));
-Console.WriteLine($"Разница между максимальным и минимальным значением равна {max - min}");
-int max = 0;
-int min = 0;
+Console.WriteLine($"Разница между максимальным и минимальным значением равна {newArray1(array)}");
 
-int[] newArray1 (int[] array)
+int newArray1 (int[] array)
 {
-    int max = array[90];
-    int min = array[10];
+    int max = array[0];
+    int min = array[0];
     for(int i = 0; i<array.Length; i++)
     {
     if (array[i]>max)
     {
         max = array[i];
     }
-    else(array[i]<min)
+    else if(array[i]<min)
     {
         min = array[i];
     }
     }
-return newArray1;
+    Console.WriteLine($"max={max} and min={min}");
+    return max - min;
 }
     
 
