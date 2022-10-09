@@ -1,40 +1,39 @@
 ﻿// Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
-//Не могу разобраться, чтото делаю не то, или возвращаю не то.
+
 
 int[] array = MyArray(5, 1, 9); //Задали массив
 Console.WriteLine(String.Join(" ", array)); //Считали массив
-int[] result = new int[array];
-Console.WriteLine(String.Join(" ", result));
+int[] array2 = newArray1(array);
+Console.WriteLine(String.Join(" ", array2));
 
-int Size = 0; //Половинчатый размер массива
-
-if(array.Length%2==0)
+int[] newArray1 (int[] array)
 {
-    Size = array.Langth/2;
-}
-else
-{
-    Size = array.Length/2+1;
-}
+    int Size = 0; //Половинчатый размер массива
 
-
-for(int i = 0; int y = 0; y=array.Length-1; i<Size, i++, y--) //Чтото не выходит, чтото не то возвращаю.
-{
-    array[x] = array[i];
-    array[y] = array[y];
-     
-    if(i!=y)
+    if(array.Length%2==0)
     {
-        array[i] = array[x]*array[y];
-        result = array[i];
+    Size = array.Length/2;
     }
     else
     {
-        array[i]=array[y];
-        result = array[i];
+    Size = array.Length/2+1;
     }
-    return result;
+
+    int[] newArray2 = new int [Size];
+    for(int i = 0, y=array.Length-1; i<Size; i++, y--) //Объявляем 2 счетчика i и y. i идет до Size, y в обр направлении.
+    {
+    if(i!=y)
+    {
+        newArray2[i] = array[i]*array[y];
+    }
+    else
+    {
+        newArray2[i] = array[i];
+    }
+    }
+return newArray2;  
 }
+    
 
 int[] MyArray(int size, int minValue, int maxValue)
 {
