@@ -1,39 +1,36 @@
 ﻿/*Задайте массив вещественных чисел. Найдите разницу между 
 максимальным и минимальным элементов массива.[3 7 22 2 78] -> 76* (double)*/
-// Не получается решить.
-
-int[] array = GetArray (5, 1, 99);
-Console.WriteLine(String.Join(" ", array));
-//int[] result1 = new int[array1];
-//int[] result2 = new int[array2];
 
 
+int[] array = MyArray(9, 10, 90); //Задали массив
+Console.WriteLine(String.Join(" ", array)); //Считали массив
+int[] array2 = newArray1(array);
+Console.WriteLine(String.Join(" ", array2));
+Console.WriteLine(newArray1(" ", array));
+Console.WriteLine($"Разница между максимальным и минимальным значением равна {max - min}");
+int max = 0;
+int min = 0;
 
-int min = 0; //мин число массива
-int max = 0; //макс число массива
-int x = 0; //индекс переменной
-int y = 0; //разница
-
-Console.WriteLine(String.Join(" ", min));
-
-for(int i = 0; i<array.Length; i++)
-{ 
-    if(array[x]<array[i])
+int[] newArray1 (int[] array)
+{
+    int max = array[90];
+    int min = array[10];
+    for(int i = 0; i<array.Length; i++)
     {
-        min = array[x];
+    if (array[i]>max)
+    {
         max = array[i];
     }
-    else
+    else(array[i]<min)
     {
-       min = array[i];
-       max= array[x];
+        min = array[i];
     }
+    }
+return newArray1;
 }
+    
 
-
-Console.WriteLine(y);
-
-int [] GetArray(int size, int minValue, int maxValue)
+int[] MyArray(int size, int minValue, int maxValue)
 {
     int[] res = new int[size];
 
